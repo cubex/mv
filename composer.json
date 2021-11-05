@@ -1,0 +1,22 @@
+{
+  "require": {
+    "packaged/safehtml": "^2.2",
+    "packaged/ui": "^1.7",
+    "packaged/context": "^1.0",
+    "packaged/helpers": "^1.0|^2.0"
+  },
+  "require-dev": {
+    "cubex/framework": "^4.17",
+    "phpunit/phpunit": "^9"
+  },
+  "autoload": {
+    "psr-4": {
+      "Cubex\\Mv\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Cubex\\Mv\\Tests\\": "tests"
+    }
+  }
+}
