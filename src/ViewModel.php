@@ -3,6 +3,7 @@ namespace Cubex\Mv;
 
 use Packaged\Context\ContextAware;
 use Packaged\Context\ContextAwareTrait;
+use Packaged\Context\WithContextTrait;
 use Packaged\Helpers\Objects;
 
 class ViewModel implements Model, ContextAware
@@ -10,6 +11,7 @@ class ViewModel implements Model, ContextAware
   protected string $_preferredView;
 
   use ContextAwareTrait;
+  use WithContextTrait;
 
   public function jsonSerialize()
   {

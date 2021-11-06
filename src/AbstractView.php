@@ -1,8 +1,13 @@
 <?php
 namespace Cubex\Mv;
 
-abstract class AbstractView implements View
+use Packaged\Context\ContextAware;
+use Packaged\Context\ContextAwareTrait;
+
+abstract class AbstractView implements View, ContextAware
 {
+  use ContextAwareTrait;
+
   protected ?Model $_model;
 
   public function __construct(?Model $data) { $this->_model = $data; }
