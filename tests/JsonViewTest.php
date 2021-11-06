@@ -20,7 +20,6 @@ class JsonViewTest extends TestCase
       $view->setFlags($flags);
     }
     self::assertEquals($expect, $view->render(), $testName . " - Render");
-    self::assertEquals($expect, $view->produceSafeHTML()->getContent(), $testName . " - SafeHtml");
   }
 
   public function viewResults()

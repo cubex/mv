@@ -3,6 +3,7 @@ namespace Cubex\Mv;
 
 use Packaged\Context\ContextAware;
 use Packaged\Context\ContextAwareTrait;
+use Packaged\SafeHtml\ISafeHtmlProducer;
 
 abstract class AbstractView implements View, ContextAware
 {
@@ -12,8 +13,14 @@ abstract class AbstractView implements View, ContextAware
 
   public function __construct(?Model $data) { $this->_model = $data; }
 
+  protected function _render(): ?ISafeHtmlProducer
+  {
+    return null;
+  }
+
   public function render(): string
   {
-    return $this->produceSafeHTML()->getContent();
+    $rendered = $this->_render();
+    return $rendered ? $rendered->produceSafeHTML()->getContent() : '';
   }
 }

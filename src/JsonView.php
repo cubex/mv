@@ -1,16 +1,9 @@
 <?php
 namespace Cubex\Mv;
 
-use Packaged\SafeHtml\SafeHtml;
-
 class JsonView extends AbstractView
 {
   protected int $_flags = JSON_PRETTY_PRINT;
-
-  public function produceSafeHTML(): SafeHtml
-  {
-    return new SafeHtml($this->render());
-  }
 
   /**
    * @param int $flags
