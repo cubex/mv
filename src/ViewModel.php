@@ -8,7 +8,7 @@ use Packaged\Helpers\Objects;
 
 class ViewModel implements Model, ContextAware
 {
-  protected string $_preferredView;
+  protected string $_defaultView;
 
   use ContextAwareTrait;
   use WithContextTrait;
@@ -19,17 +19,17 @@ class ViewModel implements Model, ContextAware
     return empty($values) ? $this : $values;
   }
 
-  public function setPreferredView(string $viewClass)
+  public function setDefaultView(string $viewClass)
   {
-    $this->_preferredView = $viewClass;
+    $this->_defaultView = $viewClass;
     return $this;
   }
 
   public function createView(string $viewClass = null)
   {
-    if($viewClass === null && !empty($this->_preferredView))
+    if($viewClass === null && !empty($this->_defaultView))
     {
-      $viewClass = $this->_preferredView;
+      $viewClass = $this->_defaultView;
     }
 
     if($viewClass === '' || !class_exists($viewClass))
