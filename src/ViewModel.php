@@ -8,11 +8,12 @@ use Packaged\Helpers\Objects;
 
 class ViewModel implements Model, ContextAware
 {
-  protected string $_defaultView;
-
   use ContextAwareTrait;
   use WithContextTrait;
 
+  protected string $_defaultView;
+
+  #[\ReturnTypeWillChange]
   public function jsonSerialize()
   {
     $values = Objects::propertyValues($this);
