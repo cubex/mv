@@ -35,6 +35,7 @@ class ArrayModel extends ViewModel
     return $this->_data;
   }
 
+  #[\ReturnTypeWillChange]
   public function jsonSerialize()
   {
     return $this->_data;

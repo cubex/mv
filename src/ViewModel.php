@@ -13,6 +13,7 @@ class ViewModel implements Model, ContextAware
   use ContextAwareTrait;
   use WithContextTrait;
 
+  #[\ReturnTypeWillChange]
   public function jsonSerialize()
   {
     $values = Objects::propertyValues($this);
